@@ -8,7 +8,16 @@ function Product (name, path, id) {
   this.votes = 0;
   this.id = id;
   this.displayed = 0;
-  productList.push(this);
+  if (localStorage.getItem('main')) {
+    var fakeProducts = JSON.parse(localStorage.getItem('main'));
+    for (var i = 0; i < fakeProducts.length; i++) {
+      if (this.id == fakeProducts[i].id) {
+        productList.push(fakeProducts[i]);
+      }
+    }
+  } else {
+    productList.push(this);
+  }
 };
 
 var productList = [];
@@ -125,6 +134,7 @@ function data() {
     votesArr.push(productList[i].votes);
     displayArr.push(productList[i].displayed);
   }
+  localStorage.setItem('main', JSON.stringify(productList));
   var barChart = new Chart(ctx, chartStuff);
 };
 
