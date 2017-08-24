@@ -1,5 +1,7 @@
 body {
-  background-color: rgb(114, 180, 194);
+  background-image: url('img/maxresdefault.jpg');
+  background-repeat: no-repeat;
+  background-color: rgb(140, 172, 157);
   color: white;
   font-family: helvetica;
   margin-left: 12%;
@@ -7,24 +9,25 @@ body {
 }
 header {
   text-align: center;
-  padding-bottom: 10px;
 }
 #count-down {
   font-size: 40px;
   line-height: 0;
   padding-top: 15px;
+  text-shadow: none;
 }
 img {
   width: 75px;
 }
 h1 span {
+  font-family: 'Baloo Tammudu', cursive;
   font-size: 80px;
   color: rgb(153, 251, 133);
 }
 p {
   line-height: 150%;
-  /*padding: 2%;*/
   font-size: 18px;
+  text-shadow: grey 2px 0 1px;
 }
 #one, #two, #three {
   float: left;

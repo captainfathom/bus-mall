@@ -103,46 +103,29 @@ function vote(event) {
       oneClick.removeEventListener('click', vote);
       twoClick.removeEventListener('click', vote);
       threeClick.removeEventListener('click', vote);
-      // var result = document.getElementById('result');
-      // var theList = document.createElement('ul');
-      // result.appendChild(theList);
-      // for (var z = 0; z < productList.length; z++) {
-      //   var list = document.createElement('li');
-      //   if (productList[z].displayed > 0) {
-      //     list.innerText = productList[z].votes + ' votes for the ' + productList[z].name + '.';
-      //   } else {
-      //     list.innerText = productList[z].name + ' was not displayed.';
-      //   }
-      //   theList.appendChild(list);
-      // }
       data();
       break;
     }
   }
   countDown--;
-  // counter();
   renderThree();
 };
 
 var nameArr = [];
 var votesArr = [];
 var displayArr = [];
+var percentage = [];
 
 function data() {
   for (var i = 0; i < productList.length; i++){
     nameArr.push(productList[i].name);
     votesArr.push(productList[i].votes);
     displayArr.push(productList[i].displayed);
+    percentage.push((productList[i].votes / productList[i].displayed) * 100);
   }
   localStorage.setItem('main', JSON.stringify(productList));
   var barChart = new Chart(ctx, chartStuff);
 };
-
-// var votesArr = [];
-// function votes() {
-//   for (var i = 0; i <)
-// }
-// bar graph
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
@@ -161,14 +144,19 @@ var chartStuff = {
       data: displayArr,
       backgroundColor: '#ccccff',
       borderWidth: 0
+    },{
+      label: '% times chosen',
+      data: percentage,
+      backgroundColor: 'rgb(66, 97, 190)',
+      borderWidth: 0
     }]
   },
   options: {
     legend: {
-      display: true,
       text: 'Results',
+      fontSize: 22,
       labels: {
-        fontColor: '#f8f8f8',
+        fontColor: 'white',
         fontSize: 14,
       }
     }
