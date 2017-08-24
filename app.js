@@ -116,6 +116,31 @@ var votesArr = [];
 var displayArr = [];
 var percentage = [];
 
+// test.object to save only relevant data
+// var saveData = {
+//   names: [],
+//   votes: [],
+//   displays: []
+// };
+//
+// function data() {
+//   if (JSON.parse(localStorage.getItem('data'))) {
+//     var theData = JSON.parse(localStorage.getItem('data'));
+//
+//   }
+//   for (var i = 0; i < productList.length; i++){
+//     nameArr.push(productList[i].name);
+//     votesArr.push(productList[i].votes);
+//     displayArr.push(productList[i].displayed);
+//     percentage.push((productList[i].votes / productList[i].displayed) * 100);
+//   }
+//   localStorage.setItem('main', JSON.stringify(productList));
+//   var barChart = new Chart(ctx, chartStuff);
+// };
+// test.end
+
+
+// working data() - do not delete
 function data() {
   for (var i = 0; i < productList.length; i++){
     nameArr.push(productList[i].name);
@@ -126,6 +151,7 @@ function data() {
   localStorage.setItem('main', JSON.stringify(productList));
   var barChart = new Chart(ctx, chartStuff);
 };
+// working data() - end
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
@@ -152,12 +178,18 @@ var chartStuff = {
     }]
   },
   options: {
-    legend: {
+    title: {
       text: 'Results',
+      fontColor: 'white',
       fontSize: 22,
-      labels: {
-        fontColor: 'white',
-        fontSize: 14,
+      legend: {
+        display: true,
+        text: 'Results',
+        fontSize: 22,
+        labels: {
+          fontColor: 'white',
+          fontSize: 14,
+        }
       }
     }
   }
