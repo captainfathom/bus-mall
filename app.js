@@ -94,24 +94,11 @@ function vote(event) {
       oneClick.removeEventListener('click', vote);
       twoClick.removeEventListener('click', vote);
       threeClick.removeEventListener('click', vote);
-      // var result = document.getElementById('result');
-      // var theList = document.createElement('ul');
-      // result.appendChild(theList);
-      // for (var z = 0; z < productList.length; z++) {
-      //   var list = document.createElement('li');
-      //   if (productList[z].displayed > 0) {
-      //     list.innerText = productList[z].votes + ' votes for the ' + productList[z].name + '.';
-      //   } else {
-      //     list.innerText = productList[z].name + ' was not displayed.';
-      //   }
-      //   theList.appendChild(list);
-      // }
       data();
       break;
     }
   }
   countDown--;
-  // counter();
   renderThree();
 };
 
@@ -127,12 +114,6 @@ function data() {
   }
   var barChart = new Chart(ctx, chartStuff);
 };
-
-// var votesArr = [];
-// function votes() {
-//   for (var i = 0; i <)
-// }
-// bar graph
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
