@@ -10,11 +10,15 @@ body {
 header {
   text-align: center;
 }
+.welcome {
+  background-color: rgba(255, 255, 255, 0.7);
+}
 #count-down {
   font-size: 40px;
   line-height: 0;
   padding-top: 15px;
   text-shadow: none;
+  color: white;
 }
 img {
   width: 75px;
@@ -25,8 +29,10 @@ h1 span {
   color: rgb(153, 251, 133);
 }
 p {
+  padding: 2%;
   line-height: 150%;
   font-size: 18px;
+  color: black;
 }
 #one, #two, #three {
   float: left;
